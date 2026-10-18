@@ -1,0 +1,113 @@
+[
+  {
+    "source": "live_gemini",
+    "input": "How much is Python tutoring?",
+    "answer": "Howdy, partner. Individual Python tutoring costs **USD 25 per 60-minute session**. \n\nIt’s guided practice to help you learn the ropes and understand the concepts—we teach you how to write the code, rather than doing the homework for you. Let me know if you'd like to set something up!",
+    "error": "",
+    "history": [
+      {
+        "user": "How much is Python tutoring?",
+        "assistant": "Howdy, partner. Individual Python tutoring costs **USD 25 per 60-minute session**. \n\nIt’s guided practice to help you learn the ropes and understand the concepts—we teach you how to write the code, rather than doing the homework for you. Let me know if you'd like to set something up!"
+      }
+    ],
+    "trace": [
+      {
+        "stage": "route",
+        "intent": "general"
+      },
+      {
+        "stage": "model",
+        "step": 1,
+        "tool_names": [],
+        "finish_reason": "FinishReason.STOP",
+        "tokens": 2076
+      }
+    ],
+    "route": "general",
+    "settings": {
+      "model": "gemini-3.8-flash",
+      "persona": "Sheriff",
+      "few_shot": true,
+      "explain": false,
+      "instruction_location": "system",
+      "reflection": false,
+      "temperature": 0.4,
+      "top_p": 0.85,
+      "top_k": 32,
+      "max_output_tokens": 2048
+    },
+    "model_steps": 1,
+    "total_tokens": 2076,
+    "seconds": 4.874,
+    "session_id": "59f47f12c4d34a1f9e954ea378c3721a",
+    "history_omitted": 0,
+    "reflection": {}
+  },
+  {
+    "source": "live_gemini",
+    "input": "Please record my interest in Code Clinic. My name is Alex Demo and my email is alex@example.com. I need help debugging a loop; please have the team contact me.",
+    "answer": "Howdy, Alex. I've logged your request for Code Clinic (receipt `#ed097ab5d985`) regarding help with debugging your loop. \n\nTo keep expectations square, recording your interest logs your details locally; it isn't a confirmed booking, and no automated email or charge has been made. The team will reach out to you at alex@example.com to discuss appointment availability. Code Clinic is USD 40 per 60-minute session to help you understand and improve your own code.",
+    "error": "",
+    "history": [
+      {
+        "user": "Please record my interest in Code Clinic. My name is Alex Demo and my email is alex@example.com. I need help debugging a loop; please have the team contact me.",
+        "assistant": "Howdy, Alex. I've logged your request for Code Clinic (receipt `#ed097ab5d985`) regarding help with debugging your loop. \n\nTo keep expectations square, recording your interest logs your details locally; it isn't a confirmed booking, and no automated email or charge has been made. The team will reach out to you at alex@example.com to discuss appointment availability. Code Clinic is USD 40 per 60-minute session to help you understand and improve your own code."
+      }
+    ],
+    "trace": [
+      {
+        "stage": "route",
+        "intent": "lead"
+      },
+      {
+        "stage": "model",
+        "step": 1,
+        "tool_names": [
+          "record_customer_interest"
+        ],
+        "finish_reason": "FinishReason.STOP",
+        "tokens": 2039
+      },
+      {
+        "stage": "action_observation",
+        "tool": "record_customer_interest",
+        "arguments": {
+          "name": "Alex Demo",
+          "message": "Code Clinic; help debugging a loop",
+          "email": "alex@example.com"
+        },
+        "observation": {
+          "ok": true,
+          "recorded": "customer_interest",
+          "id": "ed097ab5d985"
+        }
+      },
+      {
+        "stage": "model",
+        "step": 2,
+        "tool_names": [],
+        "finish_reason": "FinishReason.STOP",
+        "tokens": 2459
+      }
+    ],
+    "route": "lead",
+    "settings": {
+      "model": "gemini-3.8-flash",
+      "persona": "Sheriff",
+      "few_shot": true,
+      "explain": false,
+      "instruction_location": "system",
+      "reflection": false,
+      "temperature": 0.4,
+      "top_p": 0.85,
+      "top_k": 32,
+      "max_output_tokens": 2048
+    },
+    "model_steps": 2,
+    "total_tokens": 4498,
+    "seconds": 11.368,
+    "session_id": "fb4d83b8df4440388c08230a23272195",
+    "history_omitted": 0,
+    "reflection": {}
+  }
+]

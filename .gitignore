@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+**/logs/
+**/__pycache__/
+**/.ipynb_checkpoints/
+.venv/
+*.pyc
+*.zip
+

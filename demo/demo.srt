@@ -1,0 +1,44 @@
+1
+00:00:00,000 --> 00:00:06,000
+Byte Club Studio
+A short demo with Gemini. All contact details are fictional.
+
+2
+00:00:06,000 --> 00:00:14,000
+Prices and policies
+The answer uses the business summary and the PDF.
+
+3
+00:00:14,000 --> 00:00:22,000
+Contact requests
+The assistant asks for the missing email.
+
+4
+00:00:22,000 --> 00:00:30,000
+Remembering details
+It combines the email with the name and request from the previous message.
+
+5
+00:00:30,000 --> 00:00:40,000
+Tool result
+The contact request was saved. The activity panel shows the receipt.
+
+6
+00:00:40,000 --> 00:00:48,000
+Feedback
+The feedback tool saves the customer's comment.
+
+7
+00:00:48,000 --> 00:00:56,000
+Unanswered questions
+The assistant records a question that the documents cannot answer.
+
+8
+00:00:56,000 --> 00:01:04,000
+ReAct version
+The LangGraph app has controls for examples and instruction placement.
+
+9
+00:01:04,000 --> 00:01:11,000
+Model settings
+Temperature, top-p, top-k, and the output limit can be changed.

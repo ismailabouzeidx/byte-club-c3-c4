@@ -1,0 +1,70 @@
+- main:
+  - heading "Byte Club Studio" [level=1]
+  - paragraph: Python tutoring, code reviews & small websites.
+  - link "hello@byteclub.example":
+    - /url: mailto:hello@byteclub.example
+  - generic: Assistant
+  - combobox "Assistant": Patch
+  - paragraph: Answers questions about services, prices, and project scope.
+  - heading "Services" [level=2]
+  - term:
+    - generic: Python tutoring
+    - generic: $25 / hr
+  - definition: One-to-one lessons and guided practice
+  - term:
+    - generic: Code Clinic
+    - generic: $40 / hr
+  - definition: Debugging and code review
+  - term:
+    - generic: Small websites
+    - generic: from $300
+  - definition: Free 20-minute consultation
+  - paragraph:
+    - text: Online sessions in English or Arabic.
+    - text: All prices in USD.
+  - button "Settings ▼":
+    - generic: Settings
+    - generic: ▼
+  - heading "Chat" [level=2]
+  - paragraph: Service questions, contact requests, and feedback.
+  - button "New chat"
+  - button "Clear":
+  - button "Copy conversation":
+  - log "chatbot conversation":
+    - 'generic "user''s message: How much is Python tutoring, and how much notice do I need to reschedule for free?"':
+      - paragraph: How much is Python tutoring, and how much notice do I need to reschedule for free?
+    - 'generic "bot''s message: Python tutoring costs USD 25 per 60-minute session. Rescheduling is free with at least 24 hours'' notice."':
+      - paragraph: Python tutoring costs USD 25 per 60-minute session. Rescheduling is free with at least 24 hours' notice.
+    - 'generic "user''s message: Please register my interest in Python tutoring. My name is Alex Demo and I need help with loops."':
+      - paragraph: Please register my interest in Python tutoring. My name is Alex Demo and I need help with loops.
+    - 'generic "bot''s message: To record your interest, please provide your email address."':
+      - paragraph: To record your interest, please provide your email address.
+    - 'generic "user''s message: My email is alex@example.com. Please record that contact request."':
+      - paragraph:
+        - text: My email is
+        - link "alex@example.com":
+          - /url: mailto:alex@example.com
+        - text: . Please record that contact request.
+    - 'generic "bot''s message: Your interest in Python tutoring has been recorded locally. This receipt confirms the record; it is not a booking, payment, or external notification."':
+      - paragraph: Your interest in Python tutoring has been recorded locally. This receipt confirms the record; it is not a booking, payment, or external notification.
+    - 'generic "user''s message: Feedback: the website pricing is unclear."':
+      - paragraph: "Feedback: the website pricing is unclear."
+    - 'generic "bot''s message: Your feedback regarding website pricing has been recorded."':
+      - paragraph: Your feedback regarding website pricing has been recorded.
+    - 'generic "user''s message: Do you provide an official Rust certification?"':
+      - paragraph: Do you provide an official Rust certification?
+    - 'generic "bot''s message: The business documents do not list Rust certification. I recorded your question for follow-up."':
+      - paragraph: The business documents do not list Rust certification. I recorded your question for follow-up.
+    - button "Retry":
+    - button "Undo":
+      - img "undo"
+  - generic: Textbox
+  - textbox "Textbox Send":
+    - /placeholder: ""
+  - button "Send"
+  - button "Activity ▼":
+    - generic: Activity
+    - generic: ▼
+  - text: 1 ▼ 2 ▼ 3 4 5 6 ▼ 7 8 9 ▼ 10 11 12 13 14 15 ▼ 16 17 18 ▼ 19 20 21 ▼ 22 23 24 25 26 27 ▼ 28 29 30 ▼ 31 32 33 34 35
+  - paragraph: Demo business. Contact requests are saved locally; no appointments are booked.
+- status

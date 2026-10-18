@@ -1,0 +1,6 @@
+google-genai==1.75.0
+gradio==6.30.0
+pypdf==6.21.1
+reportlab==4.5.1
+python-dotenv==1.2.1
+langgraph==1.2.16
