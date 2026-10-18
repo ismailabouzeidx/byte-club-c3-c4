@@ -1,8 +1,10 @@
 # Byte Club Studio
 
-Ismail Abou Zeid | EECE 503P/798S
+Ismail Abou Zeid
 
 C4 extends the C3 chatbot with a manual ReAct loop in LangGraph. It uses the same business documents, router, tools, validation, and Gemini connection.
+
+For Moodle, the complete deliverable is `react_agent.ipynb`. The notebook embeds all 54 trial records and the full reflection, installs its dependencies, and recreates its business and evidence files. The other files in this folder are supporting repository copies.
 
 ## Run
 

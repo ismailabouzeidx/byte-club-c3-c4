@@ -1,4 +1,4 @@
-Byte Club Studio is a fictional small business created for the EECE 503P/798S assignments. Its mission is to make practical coding help clear, approachable, and honestly scoped for university students and small organizations.
+Byte Club Studio is a fictional small business offering practical coding help. Its mission is to make practical coding help clear, approachable, and honestly scoped for students and small organizations.
 
 Services and published prices (USD): Python tutoring costs $25 per 60-minute individual session. Code Clinic costs $40 per 60-minute debugging and code-review session. A starter website consultation is free for 20 minutes; website implementation starts at $300 and needs a written scope and quote. No discounts, certified qualifications, exact project deadlines, or live appointment availability are published.
 

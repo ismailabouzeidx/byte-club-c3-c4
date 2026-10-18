@@ -1,6 +1,6 @@
 # Requirements and validation record
 
-Validated on 17 October 2026. Both Moodle deadlines are Sunday, 18 October 2026, 11:59 PM.
+Validated on 17 October 2026.
 
 ## C3
 
@@ -15,7 +15,7 @@ Validated on 17 October 2026. Both Moodle deadlines are Sunday, 18 October 2026,
 | Gemini and short-term memory | Final six-turn notebook demo completed; name and needs retained until email arrived |
 | Gradio ChatInterface | Desktop browser walkthrough and screenshots captured |
 | Successful notebook execution | Fresh kernel passed, excluding package reinstallation and public launch |
-| Repository and functionality video | Video completed; remote repository publication awaits GitHub sign-in |
+| Repository and functionality video | Public GitHub repository and completed functionality video |
 | Optional reflection | Actual draft and reviewed reply saved; the correct draft remained unchanged |
 | Optional Hugging Face deployment | Not performed or claimed |
 
@@ -49,12 +49,17 @@ The interface was revised after review: an off-white background, serif heading, 
 
 The earlier Gemini 3.8 pilot and quota failure are separate. The 71-second captioned video uses actual browser screenshots and synthetic contacts, with pauses condensed and persona changes. It is not an uninterrupted screen recording. A mobile viewport override could not be verified in this browser, so no mobile-test result is claimed.
 
-The export excludes `.env`, runtime logs, caches, and bytecode. A scan for the configured key found no credential in candidate submission files. No Moodle submission was made; Ismail handles final Moodle submission as agreed.
+The export excludes `.env`, runtime logs, caches, and bytecode. A scan for the configured key found no credential in candidate submission files.
 
 ## Colab copies
 
-- [C3 business notebook](https://colab.research.google.com/drive/1BaJ_CW_EFNjf66WRa41ZVTdqAQzshhbx)
-- [C4 ReAct notebook](https://colab.research.google.com/drive/18sxUWaPAp_phlh2PDL66JRn3Xn7nYq3H)
-- [Drive folder](https://drive.google.com/drive/folders/1LAQsfbPgM6i18xrXqfcr3fSdnjE0enJq)
+- [C3 business notebook](https://colab.research.google.com/github/ismailabouzeidx/byte-club-c3-c4/blob/main/C3/business_agent.ipynb)
+- [C4 ReAct notebook](https://colab.research.google.com/github/ismailabouzeidx/byte-club-c3-c4/blob/main/C4/react_agent.ipynb)
 
-Uploaded metadata was read back successfully. Notebook execution was verified in local Jupyter; Google-hosted runtime execution is not claimed.
+Colab links open the notebooks directly from this repository. Notebook execution was verified in local Jupyter; Google-hosted runtime execution is not claimed.
+
+## Submission notebook review - 18 October 2026
+
+Both notebooks use the author's singular voice for choices and findings. C4 includes all five reflection answers and the complete 54-trial comparison inside the notebook. Its embedded evidence was restored in an empty temporary workspace and reproduced the recorded nine-setup summary; existing result files were preserved on rerun. All non-installation Python cells compiled, and the notebooks contain no saved error outputs.
+
+The setup cell no longer prints the local working directory, and that saved path was removed from both notebooks. The notebook builder preserves the same content and omits the path print. This review did not repeat the earlier live Gemini trials or a full dependency/kernel run.

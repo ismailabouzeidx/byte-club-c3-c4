@@ -1,6 +1,6 @@
 # Byte Club Studio
 
-Ismail Abou Zeid | EECE 503P/798S
+Ismail Abou Zeid
 
 Byte Club Studio is a fictional business offering coding lessons, code reviews, and small websites. The C3 notebook uses Gemini, two logging tools, a three-way router, and Gradio ChatInterface.
 

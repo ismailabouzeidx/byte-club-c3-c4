@@ -3,6 +3,7 @@ import base64
 import json
 from pathlib import Path
 import nbformat as nbf
+from submission_content import complete_submission_notebook
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "authoring"
@@ -52,7 +53,7 @@ def build(assignment):
     requirements = "\n".join(name + "==" + version for name, version in packages.items()) + "\n"
     (folder / "requirements.txt").write_text(requirements)
     (folder / ".env.example").write_text((ROOT / ".env.example").read_text())
-    cells = [md("# Byte Club Studio\n\n**Ismail Abou Zeid | EECE 503P/798S: Agentic Systems**\n\n" +
+    cells = [md("# Byte Club Studio\n\n**Ismail Abou Zeid**\n\n" +
                 ("A business assistant with a three-way router, model-requested tools, business documents, and a Gradio chat interface." if assignment == "C3" else
                  "An extension of C3 with a manual ReAct loop in LangGraph. I compare personas, prompt settings, and tool use, then discuss the results.") +
                 "\n\nThis notebook is self-contained: it creates its business documents, defines the code, and can run on a CPU in Colab. The business and all evaluation contacts are fictional. Read each explanation before running the next code cell."),
@@ -79,9 +80,8 @@ if IN_COLAB and not os.getenv('GEMINI_API_KEY'):
         key = getpass('Gemini API key (hidden; leave blank to skip live calls): ')
         if key:
             os.environ['GEMINI_API_KEY'] = key
-print('Gemini key configured:', bool(os.getenv('GEMINI_API_KEY') or os.getenv('GOOGLE_API_KEY')))
-print('Workspace:', Path.cwd())"""),
-             md("## 3. Business identity and source files\n\n**Goal:** help beginners and small organizations choose coding assistance, answer factual service questions, record qualified contact requests, and log feedback.\n\n**Audience:** university students, beginner programmers, and small organizations.\n\n**Tools:** `record_customer_interest` and `record_feedback`.\n\n**Limits:** this is a fictional information and intake assistant. It cannot confirm appointments, email customers, process payments, or promise unavailable services. Its knowledge comes only from the two included business files.\n\nThe following cell writes the actual PDF and summary. `summary.txt` is an identical alias because the brief uses both spellings; `business_summary.txt` is the checklist's primary filename."),
+print('Gemini key configured:', bool(os.getenv('GEMINI_API_KEY') or os.getenv('GOOGLE_API_KEY')))"""),
+             md("## 3. Business identity and source files\n\n**Goal:** help beginners and small organizations choose coding assistance, answer factual service questions, record qualified contact requests, and log feedback.\n\n**Audience:** students, beginner programmers, and small organizations.\n\n**Tools:** `record_customer_interest` and `record_feedback`.\n\n**Limits:** this is a fictional information and intake assistant. It cannot confirm appointments, email customers, process payments, or promise unavailable services. Its knowledge comes only from the two included business files.\n\nThe following cell writes the actual PDF and summary. `summary.txt` is an identical alias because the brief uses both spellings; `business_summary.txt` is the checklist's primary filename."),
              code((SOURCE / "business.py").read_text().split('\nif __name__ == "__main__":')[0] + '\ncreate_business_files("me")\nprint("Business PDF and summary created.")')]
     used = ["common.py"] + (["graph.py", "experiments.py"] if assignment == "C4" else []) + ["interface.py"]
     section_number = 4
@@ -136,12 +136,13 @@ else:
     cells.extend([md("## Launch the chatbot\n\nIn Colab, `share=True` creates a temporary public Gradio URL tied to the runtime. Use synthetic data. Locally, leave `SHARE=False` and open the localhost address. Hugging Face Spaces is an optional separate deployment bonus, not required for the base assignment."),
                   code("SHARE = IN_COLAB\napp = build_app('" + assignment + "')\napp.launch(share=SHARE, **app.byteclub_launch)"),
                   md("## Submission and reproducibility\n\nInclude this notebook, `me/about_business.pdf`, `me/business_summary.txt`, `requirements.txt`, and `README.md`. C3 explicitly requires a GitHub repository with a functionality video. Keep the C3 and C4 folders separately runnable. The filled `.env` and runtime customer logs are excluded.\n\nKnown limitations: a simple router can miss indirect phrasing; model replies need factual review; local logs are not a production CRM; API access and the temporary demo URL depend on the account/runtime; short conversation memory omits older turns."),
-                  md("## References\n\n- [Assignment C3](https://lms.aub.edu.lb/mod/assign/view.php?id=2784814)\n- [Assignment C4](https://lms.aub.edu.lb/mod/assign/view.php?id=2784815)\n- [Gemini function calling](https://ai.google.dev/gemini-api/docs/generate-content/function-calling)\n- [Gemini models](https://ai.google.dev/gemini-api/docs/models)\n- [Google GenAI Python SDK](https://github.com/googleapis/python-genai)\n- [LangGraph Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)\n- [Gradio ChatInterface](https://www.gradio.app/docs/gradio/chatinterface)\n\nThe project uses ordinary application tool calls with MCP-style schema descriptions, not an MCP server. The LangGraph framework dependency may install prebuilt modules transitively; this project does not import or use them.")])
+                  md("## References\n\n- [Gemini function calling](https://ai.google.dev/gemini-api/docs/generate-content/function-calling)\n- [Gemini models](https://ai.google.dev/gemini-api/docs/models)\n- [Google GenAI Python SDK](https://github.com/googleapis/python-genai)\n- [LangGraph Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)\n- [Gradio ChatInterface](https://www.gradio.app/docs/gradio/chatinterface)\n\nThe project uses ordinary application tool calls with MCP-style schema descriptions, not an MCP server. The LangGraph framework dependency may install prebuilt modules transitively; this project does not import or use them.")])
     nb = nbf.v4.new_notebook(cells=cells)
     nb.metadata = {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
                    "language_info": {"name": "python"}, "colab": {"provenance": []}}
     name = "business_agent.ipynb" if assignment == "C3" else "react_agent.ipynb"
     path = folder / name
+    nb = nbf.from_dict(complete_submission_notebook(nb, assignment, folder))
     # Rebuilding preserves observed outputs when a cell's exact code is unchanged.
     if path.exists():
         previous = nbf.read(path, as_version=4)
